@@ -1,6 +1,6 @@
 *~
 *.pyc
 .*.swp
-fabfile/log/*
+log/*
 fabfile/__pycache__/*
 !.gitkeep

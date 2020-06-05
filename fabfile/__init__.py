@@ -6,8 +6,10 @@ from datetime import datetime
 #======================================================
 # Variable
 #======================================================
-#FABDIR="/home/vagrant/fabric3-python3-examples/fabfile"
 FABDIR=os.path.dirname(os.path.abspath(__file__))
+os.chdir("%s" % FABDIR)
+os.chdir("../")
+FABDIR=os.getcwd()
 
 env.warn_only = True
 env.port = 22
