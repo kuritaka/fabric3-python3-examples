@@ -1,25 +1,26 @@
 #!/bin/bash
 #===========================================================
-# fhghost.sh    FastHandle Grep Host
+# ghost.sh    Grep Host
 #
 # How to use
 #   Help
-#     fhghost.sh  -h
-#   Test
-#     fhghost.sh -a FILE
+#     ghost.sh  -h
+#   Test (print all line)
+#     ghost.sh -t FILE
+#     ghost.sh -a FILE
 #   pipe to Fabric
-#     fhghost.sh  FILE | fab xxx
-#     fhghost.sh  "*"  hosts/xxxx |fab xxx  <- like grep PATTERN FILE
-#     fhghost.sh  PATTERN FILE |fab xxx     <- like grep PATTERN FILE
+#     ghost.sh  FILE | fab xxx
+#     ghost.sh  "*"  hosts/xxxx |fab xxx  <- like grep PATTERN FILE
+#     ghost.sh  PATTERN FILE |fab xxx     <- like grep PATTERN FILE
 #
 #===========================================================
 
 help(){
 cat << @
 Example
-  fhghost.sh  FILE
-  fhghost.sh  PATTERN FILE
-  fhghost.sh  "*" FILE
+  ghost.sh  FILE
+  ghost.sh  PATTERN FILE
+  ghost.sh  "*" FILE
 @
 }
 
