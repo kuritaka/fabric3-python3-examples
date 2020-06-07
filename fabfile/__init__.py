@@ -11,8 +11,8 @@ os.chdir("%s" % FABDIR)
 os.chdir("../")
 FABDIR=os.getcwd()
 
-env.warn_only = True
 env.port = 22
+env.warn_only = True
 env.eagerly_disconnect = True
 
 #don't create *.pyc without __init__.pyc
