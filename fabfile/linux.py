@@ -11,7 +11,7 @@ FABDIR=os.getcwd()
 #------------------------------------------------------------------
 @task
 def test():
-    '''test'''
+    '''test # fab -H x.x.x.x linux.test'''
     local("pwd")
     run("hostname")
     sudo("cat /etc/sudoers")
@@ -22,6 +22,7 @@ def test():
 #------------------------------------------------------------------
 @task
 def put_test():
+    '''put test # fab -H x.x.x.x linux.put_test'''
     put("scripts/fabtest.sh" , "/tmp/fabtest.sh")
     run("chmod 755 /tmp/fabtest.sh")
     run("ls -l /tmp")
@@ -29,21 +30,25 @@ def put_test():
     run("cat /tmp/fabtest.txt")
     run("rm -f /tmp/fabtest.txt")
 
+
 #------------------------------------------------------------------
 # fab -H x.x.x.x linux.get_test
 #------------------------------------------------------------------
 @task
 def get_test():
+    '''get test # fab -H x.x.x.x linux.get_test'''
     run("hostname > /tmp/fabtest.txt")
     get("/tmp/fabtest.txt", "tmp/fabtest.txt")
     local("cat  tmp/fabtest.txt")
     local("rm -f tmp/fabtest.txt")
+
 
 #------------------------------------------------------------------
 # fab -H x.x.x.x linux.vi_test
 #------------------------------------------------------------------
 @task
 def vi_test():
+    '''vi test # fab -H x.x.x.x linux.vi_test'''
     open_shell("vi ~/test.txt && exit")
 
 
